@@ -1,6 +1,6 @@
 {
-  "name": "countula",
-  "version": "1.1.7",
+  "name": "node-red-contrib-countula",
+  "version": "1.1.9",
   "description": "Counts messages",
   "node-red" : {
         "nodes": {
@@ -12,8 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "counter"
+    "counter",
+    "node-red"
   ],
-  "author": "Shawn Storie",
+  "author": "Protocolus",
   "license": "ISC"
 }
