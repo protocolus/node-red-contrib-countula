@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    RED.nodes.registerType('countula',{
+        category: 'rebound',
+        color: '#C0C0C0',
+	align: 'left',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "count.png",
+	inputLabels: "any",
+	outputLabels: ["stdout", "count"],
+        label: function() {
+            return this.name||"countula";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="countula">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="countula">
+<p>Counts messages.</p>
+
+<h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string | buffer</span>
+        </dt>
+        <dd> Any ol payload will do. </dd>
+        <dt class="optional">topic <span class="property-type">string</span></dt>
+        <dd> set topic to SET or RESET to set the initial count or reset it.</dd>
+    </dl>
+
+<ol class="node-ports">
+    <li>Standard output
+        <dl class="message-properties">
+            <dt>payload <span class="property-type">string</span></dt>
+            <dd>The payload that we received.</dd>
+        </dl>
+    </li>
+    <li>Count
+        <dl class="message-properties">
+            <dt>payload <span class="property-type">string</span></dt>
+            <dd>the number of msgs we have seen since RESET or SET.</dd>
+        </dl>
+    </li>
+</ol>
+
+<h3>Details</h3>
+    <p><code>msg.payload</code> is used as the payload of the published message.</p>
+    <p><code>msg.topic</code> can used to SET or RESET or, if left blank, it will just add to the previous value.</p>
+
+</script>
