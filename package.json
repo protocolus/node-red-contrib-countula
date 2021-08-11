@@ -2,6 +2,10 @@
   "name": "node-red-contrib-countula",
   "version": "1.1.9",
   "description": "Counts messages",
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/protocolus/node-red-contrib-countula.git"
+    },
   "node-red" : {
         "nodes": {
             "countula": "countula.js"
